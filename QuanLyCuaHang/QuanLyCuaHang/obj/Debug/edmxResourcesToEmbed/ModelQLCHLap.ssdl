@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLCHLapModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HoaDonBanHang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="IDKhachHang" Type="int" Nullable="false" />
+    <Property Name="Tien" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="HoaDonBaoHanh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LyDoBH" Type="nvarchar" MaxLength="255" />
+    <Property Name="IDPhieuBaoHanh" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenKH" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SDT" Type="char" MaxLength="10" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PhieuBaoHanh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ThoiHanBaoHanh" Type="int" Nullable="false" />
+    <Property Name="IDHoaDonBanHang" Type="int" />
+  </EntityType>
+  <EntityType Name="PhieuNhapKho">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gia" Type="float" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhieuXuatKho">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gia" Type="float" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenSP" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ThongSo" Type="nvarchar" MaxLength="255" />
+    <Property Name="Gia" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+  </EntityType>
+  <EntityType Name="SanPham_HoaDonBanHang">
+    <Key>
+      <PropertyRef Name="IDSanPham" />
+      <PropertyRef Name="IDHoaDonBanHang" />
+    </Key>
+    <Property Name="IDSanPham" Type="int" Nullable="false" />
+    <Property Name="IDHoaDonBanHang" Type="int" Nullable="false" />
+    <Property Name="NgayTao" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanPham_PhieuNhapKho">
+    <Key>
+      <PropertyRef Name="IDSanPham" />
+      <PropertyRef Name="IDPhieuNhapKho" />
+    </Key>
+    <Property Name="IDSanPham" Type="int" Nullable="false" />
+    <Property Name="IDPhieuNhapKho" Type="int" Nullable="false" />
+    <Property Name="NgayNhap" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanPham_PhieuXuatKho">
+    <Key>
+      <PropertyRef Name="IDSanPham" />
+      <PropertyRef Name="IDPhieuXuatKho" />
+    </Key>
+    <Property Name="IDSanPham" Type="int" Nullable="false" />
+    <Property Name="IDPhieuXuatKho" Type="int" Nullable="false" />
+    <Property Name="NgayXuat" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__HoaDonBan__IDKha__286302EC">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+    <End Role="HoaDonBanHang" Type="Self.HoaDonBanHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HoaDonBanHang">
+        <PropertyRef Name="IDKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoaDonBao__IDPhi__3D5E1FD2">
+    <End Role="PhieuBaoHanh" Type="Self.PhieuBaoHanh" Multiplicity="1" />
+    <End Role="HoaDonBaoHanh" Type="Self.HoaDonBaoHanh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuBaoHanh">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HoaDonBaoHanh">
+        <PropertyRef Name="IDPhieuBaoHanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PhieuBaoH__IDHoa__3A81B327">
+    <End Role="HoaDonBanHang" Type="Self.HoaDonBanHang" Multiplicity="0..1" />
+    <End Role="PhieuBaoHanh" Type="Self.PhieuBaoHanh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDonBanHang">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PhieuBaoHanh">
+        <PropertyRef Name="IDHoaDonBanHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham_H__IDHoa__2C3393D0">
+    <End Role="HoaDonBanHang" Type="Self.HoaDonBanHang" Multiplicity="1" />
+    <End Role="SanPham_HoaDonBanHang" Type="Self.SanPham_HoaDonBanHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDonBanHang">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SanPham_HoaDonBanHang">
+        <PropertyRef Name="IDHoaDonBanHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham_H__IDSan__2B3F6F97">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="SanPham_HoaDonBanHang" Type="Self.SanPham_HoaDonBanHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SanPham_HoaDonBanHang">
+        <PropertyRef Name="IDSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham_P__IDPhi__31EC6D26">
+    <End Role="PhieuNhapKho" Type="Self.PhieuNhapKho" Multiplicity="1" />
+    <End Role="SanPham_PhieuNhapKho" Type="Self.SanPham_PhieuNhapKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuNhapKho">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SanPham_PhieuNhapKho">
+        <PropertyRef Name="IDPhieuNhapKho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham_P__IDPhi__37A5467C">
+    <End Role="PhieuXuatKho" Type="Self.PhieuXuatKho" Multiplicity="1" />
+    <End Role="SanPham_PhieuXuatKho" Type="Self.SanPham_PhieuXuatKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhieuXuatKho">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SanPham_PhieuXuatKho">
+        <PropertyRef Name="IDPhieuXuatKho" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham_P__IDSan__30F848ED">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="SanPham_PhieuNhapKho" Type="Self.SanPham_PhieuNhapKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SanPham_PhieuNhapKho">
+        <PropertyRef Name="IDSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham_P__IDSan__36B12243">
+    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
+    <End Role="SanPham_PhieuXuatKho" Type="Self.SanPham_PhieuXuatKho" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SanPham_PhieuXuatKho">
+        <PropertyRef Name="IDSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLCHLapModelStoreContainer">
+    <EntitySet Name="HoaDonBanHang" EntityType="Self.HoaDonBanHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDonBaoHanh" EntityType="Self.HoaDonBaoHanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhieuBaoHanh" EntityType="Self.PhieuBaoHanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhieuNhapKho" EntityType="Self.PhieuNhapKho" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhieuXuatKho" EntityType="Self.PhieuXuatKho" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham_HoaDonBanHang" EntityType="Self.SanPham_HoaDonBanHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham_PhieuNhapKho" EntityType="Self.SanPham_PhieuNhapKho" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SanPham_PhieuXuatKho" EntityType="Self.SanPham_PhieuXuatKho" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__HoaDonBan__IDKha__286302EC" Association="Self.FK__HoaDonBan__IDKha__286302EC">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="HoaDonBanHang" EntitySet="HoaDonBanHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoaDonBao__IDPhi__3D5E1FD2" Association="Self.FK__HoaDonBao__IDPhi__3D5E1FD2">
+      <End Role="PhieuBaoHanh" EntitySet="PhieuBaoHanh" />
+      <End Role="HoaDonBaoHanh" EntitySet="HoaDonBaoHanh" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PhieuBaoH__IDHoa__3A81B327" Association="Self.FK__PhieuBaoH__IDHoa__3A81B327">
+      <End Role="HoaDonBanHang" EntitySet="HoaDonBanHang" />
+      <End Role="PhieuBaoHanh" EntitySet="PhieuBaoHanh" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham_H__IDHoa__2C3393D0" Association="Self.FK__SanPham_H__IDHoa__2C3393D0">
+      <End Role="HoaDonBanHang" EntitySet="HoaDonBanHang" />
+      <End Role="SanPham_HoaDonBanHang" EntitySet="SanPham_HoaDonBanHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham_H__IDSan__2B3F6F97" Association="Self.FK__SanPham_H__IDSan__2B3F6F97">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="SanPham_HoaDonBanHang" EntitySet="SanPham_HoaDonBanHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham_P__IDPhi__31EC6D26" Association="Self.FK__SanPham_P__IDPhi__31EC6D26">
+      <End Role="PhieuNhapKho" EntitySet="PhieuNhapKho" />
+      <End Role="SanPham_PhieuNhapKho" EntitySet="SanPham_PhieuNhapKho" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham_P__IDPhi__37A5467C" Association="Self.FK__SanPham_P__IDPhi__37A5467C">
+      <End Role="PhieuXuatKho" EntitySet="PhieuXuatKho" />
+      <End Role="SanPham_PhieuXuatKho" EntitySet="SanPham_PhieuXuatKho" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham_P__IDSan__30F848ED" Association="Self.FK__SanPham_P__IDSan__30F848ED">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="SanPham_PhieuNhapKho" EntitySet="SanPham_PhieuNhapKho" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham_P__IDSan__36B12243" Association="Self.FK__SanPham_P__IDSan__36B12243">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="SanPham_PhieuXuatKho" EntitySet="SanPham_PhieuXuatKho" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b033a0df70d943c3b2af7727adda9aed" Name="Diagram1">
+        <EntityTypeShape EntityType="QLCHLapModel.HoaDonBanHang" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHLapModel.HoaDonBaoHanh" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHLapModel.KhachHang" Width="1.5" PointX="1.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHLapModel.PhieuBaoHanh" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHLapModel.PhieuNhapKho" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHLapModel.PhieuXuatKho" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHLapModel.SanPham" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHLapModel.SanPham_HoaDonBanHang" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHLapModel.SanPham_PhieuNhapKho" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHLapModel.SanPham_PhieuXuatKho" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHLapModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="QLCHLapModel.FK__HoaDonBan__IDKha__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHLapModel.FK__PhieuBaoH__IDHoa__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHLapModel.FK__SanPham_H__IDHoa__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHLapModel.FK__HoaDonBao__IDPhi__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHLapModel.FK__SanPham_P__IDPhi__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHLapModel.FK__SanPham_P__IDPhi__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHLapModel.FK__SanPham_H__IDSan__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHLapModel.FK__SanPham_P__IDSan__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHLapModel.FK__SanPham_P__IDSan__36B12243" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
