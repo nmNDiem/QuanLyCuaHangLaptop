@@ -17,6 +17,7 @@ namespace QuanLyCuaHang
         public int IDSanPham { get; set; }
         public int IDHoaDonBanHang { get; set; }
         public System.DateTime NgayTao { get; set; }
+        public Nullable<int> HoanThanh { get; set; }
     
         public virtual HoaDonBanHang HoaDonBanHang { get; set; }
         public virtual SanPham SanPham { get; set; }

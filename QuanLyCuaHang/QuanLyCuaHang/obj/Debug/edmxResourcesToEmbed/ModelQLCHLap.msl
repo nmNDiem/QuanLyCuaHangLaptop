@@ -7,7 +7,7 @@
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="IDKhachHang" ColumnName="IDKhachHang" />
-          <ScalarProperty Name="Tien" ColumnName="Tien" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -75,6 +75,7 @@
           <ScalarProperty Name="IDSanPham" ColumnName="IDSanPham" />
           <ScalarProperty Name="IDHoaDonBanHang" ColumnName="IDHoaDonBanHang" />
           <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

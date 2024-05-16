@@ -24,7 +24,7 @@ namespace QuanLyCuaHang
         public int ID { get; set; }
         public int SoLuong { get; set; }
         public int IDKhachHang { get; set; }
-        public Nullable<decimal> Tien { get; set; }
+        public Nullable<decimal> TongTien { get; set; }
     
         public virtual KhachHang KhachHang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -7,7 +7,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
     <Property Name="IDKhachHang" Type="int" Nullable="false" />
-    <Property Name="Tien" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TongTien" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="HoaDonBaoHanh">
     <Key>
@@ -69,6 +69,7 @@
     <Property Name="IDSanPham" Type="int" Nullable="false" />
     <Property Name="IDHoaDonBanHang" Type="int" Nullable="false" />
     <Property Name="NgayTao" Type="datetime" Nullable="false" />
+    <Property Name="HoanThanh" Type="int" />
   </EntityType>
   <EntityType Name="SanPham_PhieuNhapKho">
     <Key>

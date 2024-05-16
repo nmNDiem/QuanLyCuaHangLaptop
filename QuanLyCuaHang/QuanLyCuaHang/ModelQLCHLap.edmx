@@ -12,7 +12,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SoLuong" Type="int" Nullable="false" />
           <Property Name="IDKhachHang" Type="int" Nullable="false" />
-          <Property Name="Tien" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TongTien" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="HoaDonBaoHanh">
           <Key>
@@ -74,6 +74,7 @@
           <Property Name="IDSanPham" Type="int" Nullable="false" />
           <Property Name="IDHoaDonBanHang" Type="int" Nullable="false" />
           <Property Name="NgayTao" Type="datetime" Nullable="false" />
+          <Property Name="HoanThanh" Type="int" />
         </EntityType>
         <EntityType Name="SanPham_PhieuNhapKho">
           <Key>
@@ -272,7 +273,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="IDKhachHang" Type="Int32" Nullable="false" />
-          <Property Name="Tien" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TongTien" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="KhachHang" Relationship="Self.FK__HoaDonBan__IDKha__286302EC" FromRole="HoaDonBanHang" ToRole="KhachHang" />
           <NavigationProperty Name="PhieuBaoHanh" Relationship="Self.FK__PhieuBaoH__IDHoa__3A81B327" FromRole="HoaDonBanHang" ToRole="PhieuBaoHanh" />
           <NavigationProperty Name="SanPham_HoaDonBanHang" Relationship="Self.FK__SanPham_H__IDHoa__2C3393D0" FromRole="HoaDonBanHang" ToRole="SanPham_HoaDonBanHang" />
@@ -346,6 +347,7 @@
           <Property Name="IDSanPham" Type="Int32" Nullable="false" />
           <Property Name="IDHoaDonBanHang" Type="Int32" Nullable="false" />
           <Property Name="NgayTao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HoanThanh" Type="Int32" />
           <NavigationProperty Name="HoaDonBanHang" Relationship="Self.FK__SanPham_H__IDHoa__2C3393D0" FromRole="SanPham_HoaDonBanHang" ToRole="HoaDonBanHang" />
           <NavigationProperty Name="SanPham" Relationship="Self.FK__SanPham_H__IDSan__2B3F6F97" FromRole="SanPham_HoaDonBanHang" ToRole="SanPham" />
         </EntityType>
@@ -550,7 +552,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="IDKhachHang" ColumnName="IDKhachHang" />
-                <ScalarProperty Name="Tien" ColumnName="Tien" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -618,6 +620,7 @@
                 <ScalarProperty Name="IDSanPham" ColumnName="IDSanPham" />
                 <ScalarProperty Name="IDHoaDonBanHang" ColumnName="IDHoaDonBanHang" />
                 <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -70,6 +70,11 @@ namespace QuanLyCuaHang
             this.txt_TienThua = new System.Windows.Forms.TextBox();
             this.btn_XuatHD = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.btn_XoaSP = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.nbr_HanBH = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDH)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -84,6 +89,8 @@ namespace QuanLyCuaHang
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbr_HanBH)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -161,7 +168,7 @@ namespace QuanLyCuaHang
             this.groupBox1.Controls.Add(this.panel8);
             this.groupBox1.Location = new System.Drawing.Point(690, 47);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(400, 264);
+            this.groupBox1.Size = new System.Drawing.Size(400, 228);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
@@ -281,18 +288,18 @@ namespace QuanLyCuaHang
             // dtgvSP
             // 
             this.dtgvSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvSP.Location = new System.Drawing.Point(14, 130);
+            this.dtgvSP.Location = new System.Drawing.Point(12, 94);
             this.dtgvSP.Name = "dtgvSP";
             this.dtgvSP.RowHeadersWidth = 62;
             this.dtgvSP.RowTemplate.Height = 28;
-            this.dtgvSP.Size = new System.Drawing.Size(659, 181);
+            this.dtgvSP.Size = new System.Drawing.Size(659, 204);
             this.dtgvSP.TabIndex = 14;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_TimSP);
-            this.panel1.Location = new System.Drawing.Point(13, 80);
+            this.panel1.Location = new System.Drawing.Point(11, 44);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(347, 38);
@@ -321,7 +328,7 @@ namespace QuanLyCuaHang
             // 
             this.panel2.Controls.Add(this.nbr_SoLuong);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(369, 80);
+            this.panel2.Location = new System.Drawing.Point(367, 44);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(162, 38);
@@ -347,7 +354,7 @@ namespace QuanLyCuaHang
             // 
             // btn_ThemDon
             // 
-            this.btn_ThemDon.Location = new System.Drawing.Point(544, 83);
+            this.btn_ThemDon.Location = new System.Drawing.Point(542, 47);
             this.btn_ThemDon.Name = "btn_ThemDon";
             this.btn_ThemDon.Size = new System.Drawing.Size(129, 35);
             this.btn_ThemDon.TabIndex = 15;
@@ -360,7 +367,7 @@ namespace QuanLyCuaHang
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.txt_TongTien);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(752, 357);
+            this.panel3.Location = new System.Drawing.Point(738, 349);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(312, 38);
@@ -393,7 +400,7 @@ namespace QuanLyCuaHang
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.txt_TienNhan);
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(773, 413);
+            this.panel4.Location = new System.Drawing.Point(759, 405);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(276, 35);
@@ -427,7 +434,7 @@ namespace QuanLyCuaHang
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.txt_TienThua);
             this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(773, 450);
+            this.panel5.Location = new System.Drawing.Point(759, 442);
             this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(276, 35);
@@ -457,15 +464,16 @@ namespace QuanLyCuaHang
             // 
             // btn_XuatHD
             // 
-            this.btn_XuatHD.BackColor = System.Drawing.Color.Red;
+            this.btn_XuatHD.BackColor = System.Drawing.Color.ForestGreen;
             this.btn_XuatHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XuatHD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_XuatHD.Location = new System.Drawing.Point(805, 495);
+            this.btn_XuatHD.Location = new System.Drawing.Point(697, 495);
             this.btn_XuatHD.Name = "btn_XuatHD";
-            this.btn_XuatHD.Size = new System.Drawing.Size(220, 50);
+            this.btn_XuatHD.Size = new System.Drawing.Size(388, 50);
             this.btn_XuatHD.TabIndex = 16;
-            this.btn_XuatHD.Text = "Xuất hóa đơn";
+            this.btn_XuatHD.Text = "Xuất hóa đơn và phiếu bảo hành";
             this.btn_XuatHD.UseVisualStyleBackColor = false;
+            this.btn_XuatHD.Click += new System.EventHandler(this.btn_XuatHD_Click);
             // 
             // label10
             // 
@@ -476,11 +484,62 @@ namespace QuanLyCuaHang
             this.label10.TabIndex = 17;
             this.label10.Text = "Thông tin đơn hàng";
             // 
+            // btn_XoaSP
+            // 
+            this.btn_XoaSP.Location = new System.Drawing.Point(544, 316);
+            this.btn_XoaSP.Name = "btn_XoaSP";
+            this.btn_XoaSP.Size = new System.Drawing.Size(129, 35);
+            this.btn_XoaSP.TabIndex = 18;
+            this.btn_XoaSP.Text = "Xóa sản phẩm";
+            this.btn_XoaSP.UseVisualStyleBackColor = true;
+            this.btn_XoaSP.Click += new System.EventHandler(this.btn_XoaSP_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.nbr_HanBH);
+            this.panel10.Controls.Add(this.label12);
+            this.panel10.Controls.Add(this.label11);
+            this.panel10.Location = new System.Drawing.Point(782, 283);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(243, 38);
+            this.panel10.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(4, 12);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 20);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Bảo hành";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(177, 8);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 20);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Tháng";
+            // 
+            // nbr_HanBH
+            // 
+            this.nbr_HanBH.Location = new System.Drawing.Point(100, 6);
+            this.nbr_HanBH.Name = "nbr_HanBH";
+            this.nbr_HanBH.Size = new System.Drawing.Size(70, 26);
+            this.nbr_HanBH.TabIndex = 2;
+            this.nbr_HanBH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // fBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1102, 569);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.btn_XoaSP);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btn_XuatHD);
             this.Controls.Add(this.panel5);
@@ -521,6 +580,9 @@ namespace QuanLyCuaHang
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nbr_HanBH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,6 +630,11 @@ namespace QuanLyCuaHang
         private System.Windows.Forms.TextBox txt_TienThua;
         private System.Windows.Forms.Button btn_XuatHD;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btn_XoaSP;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.NumericUpDown nbr_HanBH;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
     }
 }
 
