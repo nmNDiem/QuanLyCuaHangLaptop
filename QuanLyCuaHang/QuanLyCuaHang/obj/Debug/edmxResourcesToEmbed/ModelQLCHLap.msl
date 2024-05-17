@@ -17,6 +17,7 @@
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="LyDoBH" ColumnName="LyDoBH" />
           <ScalarProperty Name="IDPhieuBaoHanh" ColumnName="IDPhieuBaoHanh" />
+          <ScalarProperty Name="TrangThaiBH" ColumnName="TrangThaiBH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

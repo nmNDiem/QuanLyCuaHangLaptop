@@ -17,6 +17,7 @@ namespace QuanLyCuaHang
         public int ID { get; set; }
         public string LyDoBH { get; set; }
         public int IDPhieuBaoHanh { get; set; }
+        public string TrangThaiBH { get; set; }
     
         public virtual PhieuBaoHanh PhieuBaoHanh { get; set; }
     }

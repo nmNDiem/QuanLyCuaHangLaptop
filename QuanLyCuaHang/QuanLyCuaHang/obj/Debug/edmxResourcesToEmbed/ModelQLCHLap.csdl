@@ -19,6 +19,7 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="LyDoBH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="IDPhieuBaoHanh" Type="Int32" Nullable="false" />
+    <Property Name="TrangThaiBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="PhieuBaoHanh" Relationship="Self.FK__HoaDonBao__IDPhi__3D5E1FD2" FromRole="HoaDonBaoHanh" ToRole="PhieuBaoHanh" />
   </EntityType>
   <EntityType Name="KhachHang">

@@ -16,6 +16,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LyDoBH" Type="nvarchar" MaxLength="255" />
     <Property Name="IDPhieuBaoHanh" Type="int" Nullable="false" />
+    <Property Name="TrangThaiBH" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="KhachHang">
     <Key>

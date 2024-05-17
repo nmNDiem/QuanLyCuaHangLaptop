@@ -247,5 +247,18 @@ namespace QuanLyCuaHang
 
             MessageBox.Show("Hoàn tất đơn hàng!");
         }
+
+        private void btn_ThemKH_Click(object sender, EventArgs e)
+        {
+            db.KhachHang.Add(new KhachHang()
+            {
+                TenKH = txt_TenKH.Text,
+                SDT = txt_Sdt.Text,
+                DiaChi = txt_DiaChi.Text
+            });
+            db.SaveChanges();
+
+            MessageBox.Show("Thêm thành công!");
+        }
     }
 }
